@@ -1,7 +1,5 @@
 # Input & Output
 
----
-
 ## 1. 🔸 Output in Java
 
 ### A. 📤 Console Output with `System.out`
@@ -29,8 +27,6 @@ System.out.printf("Port: %d%n", 8080);
 
 - Prefer `printf` for readability.
 - Use `println` to ensure proper line breaks.
-
----
 
 ### B. 📤 GUI Output with `JOptionPane.showMessageDialog`
 
@@ -60,8 +56,6 @@ public class SwingOutput {
 
 - Suitable for small or user-facing desktop apps.
 - Avoid in backend or server-side environments.
-
----
 
 ## 2. 🔸 Input in Java
 
@@ -94,8 +88,6 @@ System.out.println("Name: " + name + ", Age: " + age);
 scanner.close();
 ```
 
----
-
 #### ⚠️ Important: Mixing `nextInt()` and `nextLine()`
 
 ##### ❌ Problem:
@@ -109,8 +101,6 @@ int age = scanner.nextInt();
 scanner.nextLine(); // Discard leftover newline
 String name = scanner.nextLine();
 ```
-
----
 
 ### B. 📥 GUI Input with `JOptionPane.showInputDialog`
 
@@ -131,8 +121,6 @@ if (input != null) {
 }
 ```
 
----
-
 ## 3. 🔸 Parsing String Input into Primitive Types
 
 | Type      | Parsing Method              | Exception |
@@ -140,8 +128,6 @@ if (input != null) {
 | `int`     | `Integer.parseInt(str)`     | Yes       |
 | `double`  | `Double.parseDouble(str)`   | Yes       |
 | `boolean` | `Boolean.parseBoolean(str)` | No        |
-
----
 
 ## 4. 🔸 Console vs Swing I/O Comparison
 
@@ -153,8 +139,6 @@ if (input != null) {
 | Portability    | Headless OK           | Requires GUI environment |
 | Debugging      | Easier                | More visual              |
 
----
-
 ## 5. 🔸 Best Practices Summary
 
 - Always close `Scanner` objects.
@@ -162,8 +146,6 @@ if (input != null) {
 - Consume newlines when mixing input methods.
 - Avoid GUI dialogs in backend services.
 - Validate user input from both console and GUI.
-
----
 
 ## 6. 🔴 Common Errors and Fixes
 
@@ -173,5 +155,3 @@ if (input != null) {
 | Crash on bad number input                  | Wrap parsing in `try-catch`                 |
 | `null` input from dialog                   | Check `if (input != null)`                  |
 | Using dialogs in server code               | Avoid GUI in backend                        |
-
----
