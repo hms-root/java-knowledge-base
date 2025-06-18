@@ -1,4 +1,4 @@
-# Input and Output in Java
+# Input & Output
 
 Input and Output (I/O) are fundamental pillars in software development. In Java, these operations enable interaction between a program and the external world, whether through the console, graphical interface, files, network, or databases.
 
@@ -155,6 +155,3 @@ try {
 - In real projects, separate I/O into dedicated classes.
 
 ---
-
-**Author:** Manuel – Path to Professional Backend Java  
-**Guide generated with expert technical assistance**
