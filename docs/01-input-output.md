@@ -1,157 +1,177 @@
 # Input & Output
 
-Input and Output (I/O) are fundamental pillars in software development. In Java, these operations enable interaction between a program and the external world, whether through the console, graphical interface, files, network, or databases.
+---
 
-This guide focuses on:
+## 1. 🔸 Output in Java
 
-- Console input and output
-- Input and output using graphical windows via **Swing**
+### A. 📤 Console Output with `System.out`
+
+#### ✅ Description
+
+`System.out` is a built-in output stream used for printing to the console.
+
+#### ✅ Usage
+
+```java
+System.out.print("Hello");       // Without newline
+System.out.println("World");     // With newline
+System.out.printf("Score: %d%n", 95); // Formatted output
+```
+
+#### ✅ Example
+
+```java
+System.out.println("Welcome!");
+System.out.printf("Port: %d%n", 8080);
+```
+
+#### 🟢 Best Practices
+
+- Prefer `printf` for readability.
+- Use `println` to ensure proper line breaks.
 
 ---
 
-## 📤 Output
+### B. 📤 GUI Output with `JOptionPane.showMessageDialog`
 
-### ✅ Console Output (`System.out`)
+#### ✅ Description
 
-**Definition:**  
-The console is the most basic and direct method for displaying textual information.
+Displays a graphical message dialog to the user.
 
-```java
-System.out.print("Without newline");
-System.out.println("With newline");
-```
-
-**Example:**
+#### ✅ Usage
 
 ```java
-System.out.print("Enter your name: ");
-System.out.println("Thank you for using the system.");
+JOptionPane.showMessageDialog(null, "Hello, user!");
 ```
 
-**Best Practices:**
-
-- Prefer `System.out.println()` for clarity.
-- Use `System.out.printf()` for formatted output.
-
-**Common Mistakes:**
-
-- Expecting a newline with `print()` without using `\n`.
-
----
-
-### ✅ Swing Output (`JOptionPane`)
-
-**Definition:**  
-`JOptionPane` allows you to show popup message windows.
+#### ✅ Example
 
 ```java
 import javax.swing.JOptionPane;
-JOptionPane.showMessageDialog(null, "Simple message");
-```
 
-**Advanced Example:**
-
-```java
-JOptionPane.showMessageDialog(null, "Operation successful", "Info", JOptionPane.INFORMATION_MESSAGE);
-```
-
-**Best Practices:**
-
-- Use in small or educational applications.
-- For real-world apps, prefer architectures with view separation.
-
----
-
-## 📥 Input
-
-### ✅ Console Input (`Scanner` class)
-
-```java
-import java.util.Scanner;
-Scanner sc = new Scanner(System.in);
-```
-
-**Read different data types:**
-
-```java
-String name = sc.nextLine();
-int age = sc.nextInt();
-double height = sc.nextDouble();
-boolean active = sc.nextBoolean();
-```
-
-**Full Example:**
-
-```java
-System.out.print("Enter age: ");
-int age = sc.nextInt();
-System.out.println("Entered age: " + age);
-```
-
-**Common Mistakes:**
-
-- `InputMismatchException` when entering incorrect types.
-- Mixing `nextInt()` with `nextLine()` incorrectly.
-
-**Best Practices:**
-
-- Validate input before conversion.
-- Close the `Scanner` with `sc.close()` when done.
-
----
-
-### ✅ Swing Input (`JOptionPane.showInputDialog`)
-
-```java
-String value = JOptionPane.showInputDialog("Enter a number:");
-int number = Integer.parseInt(value);
-```
-
-**Example with error handling:**
-
-```java
-try {
-    int age = Integer.parseInt(value);
-} catch (NumberFormatException e) {
-    JOptionPane.showMessageDialog(null, "Invalid age");
+public class SwingOutput {
+    public static void main(String[] args) {
+        JOptionPane.showMessageDialog(null, "Operation completed.");
+    }
 }
 ```
 
-**Best Practices:**
+#### 🟢 Best Practices
 
-- Validate the string before converting.
-- Handle `NumberFormatException`.
-
----
-
-## 🔍 Key Differences
-
-| Feature            | Console (`Scanner`) | Swing (`JOptionPane`) |
-| ------------------ | ------------------- | --------------------- |
-| Interface          | Command line        | Graphical (window)    |
-| Returned Type      | Concrete types      | Always `String`       |
-| Testability        | High                | Low                   |
-| Professional Usage | Common              | Rare in backend       |
+- Suitable for small or user-facing desktop apps.
+- Avoid in backend or server-side environments.
 
 ---
 
-## 💡 Analogy
+## 2. 🔸 Input in Java
 
-> Think of I/O as a kitchen:
->
-> - Input = Ingredients you receive
-> - Output = Dish you serve
->
-> The way ingredients arrive (console, window) and how the dish is served (text, pop-up) may vary, but the "chef" (your business logic) must handle them properly.
+### A. 📥 Console Input with `Scanner`
+
+#### ✅ Description
+
+The `Scanner` class reads input from the console using `System.in`.
+
+#### ✅ Usage
+
+```java
+Scanner scanner = new Scanner(System.in);
+String name = scanner.nextLine();
+int age = scanner.nextInt();
+```
+
+#### ✅ Example
+
+```java
+Scanner scanner = new Scanner(System.in);
+System.out.print("Enter your name: ");
+String name = scanner.nextLine();
+
+System.out.print("Enter your age: ");
+int age = scanner.nextInt();
+scanner.nextLine(); // Consume the newline
+
+System.out.println("Name: " + name + ", Age: " + age);
+scanner.close();
+```
 
 ---
 
-## 🧭 General Best Practices
+#### ⚠️ Important: Mixing `nextInt()` and `nextLine()`
 
-- Always validate user input.
-- Use `try-catch` for invalid conversions.
-- Comment I/O blocks for maintenance.
-- Do not mix business logic with I/O logic.
-- In real projects, separate I/O into dedicated classes.
+##### ❌ Problem:
+
+Using `nextLine()` after `nextInt()` without consuming the newline causes the next input to be skipped.
+
+##### ✅ Fix:
+
+```java
+int age = scanner.nextInt();
+scanner.nextLine(); // Discard leftover newline
+String name = scanner.nextLine();
+```
+
+---
+
+### B. 📥 GUI Input with `JOptionPane.showInputDialog`
+
+#### ✅ Description
+
+Prompts the user for input using a dialog and returns a `String`.
+
+#### ✅ Example
+
+```java
+String input = JOptionPane.showInputDialog("Enter your age:");
+if (input != null) {
+    try {
+        int age = Integer.parseInt(input);
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "Invalid number.");
+    }
+}
+```
+
+---
+
+## 3. 🔸 Parsing String Input into Primitive Types
+
+| Type      | Parsing Method              | Exception |
+| --------- | --------------------------- | --------- |
+| `int`     | `Integer.parseInt(str)`     | Yes       |
+| `double`  | `Double.parseDouble(str)`   | Yes       |
+| `boolean` | `Boolean.parseBoolean(str)` | No        |
+
+---
+
+## 4. 🔸 Console vs Swing I/O Comparison
+
+| Feature        | Console I/O           | Swing I/O                |
+| -------------- | --------------------- | ------------------------ |
+| Interface Type | Text-based            | Graphical dialogs        |
+| Use Case       | Backend, CLI tools    | Simple desktop GUIs      |
+| Input Parsing  | Built-in with Scanner | Manual parsing needed    |
+| Portability    | Headless OK           | Requires GUI environment |
+| Debugging      | Easier                | More visual              |
+
+---
+
+## 5. 🔸 Best Practices Summary
+
+- Always close `Scanner` objects.
+- Use `try-catch` for input parsing.
+- Consume newlines when mixing input methods.
+- Avoid GUI dialogs in backend services.
+- Validate user input from both console and GUI.
+
+---
+
+## 6. 🔴 Common Errors and Fixes
+
+| Error                                      | Fix                                         |
+| ------------------------------------------ | ------------------------------------------- |
+| `nextLine()` after `nextInt()` skips input | Use `scanner.nextLine()` after numeric read |
+| Crash on bad number input                  | Wrap parsing in `try-catch`                 |
+| `null` input from dialog                   | Check `if (input != null)`                  |
+| Using dialogs in server code               | Avoid GUI in backend                        |
 
 ---
