@@ -89,11 +89,17 @@ Compare two values.
 
 Used with boolean expressions.
 
-| Operator | Description | Example          |
-| -------- | ----------- | ---------------- | ---------- | ------ | --- | ------ |
-| `&&`     | Logical AND | `a > 0 && b > 0` |
-| `        |             | `                | Logical OR | `a > 0 |     | b > 0` |
-| `!`      | Logical NOT | `!(a > b)`       |
+- `&&` — **Logical AND**  
+  Example: `a > 0 && b > 0`  
+  Returns `true` only if **both** conditions are true.
+
+- `||` — **Logical OR**  
+  Example: `a > 0 || b > 0`  
+  Returns `true` if **at least one** condition is true.
+
+- `!` — **Logical NOT**  
+  Example: `!(a > b)`  
+  Inverts the boolean value of the expression.
 
 > ✅ Use `&&` and `||` for compound conditions.
 
