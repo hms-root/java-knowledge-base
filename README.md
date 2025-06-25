@@ -6,3 +6,4 @@
 
 - [Input and Output](./docs/01-fundamentals/01-input-output/)
 - [Variables](./docs/01-fundamentals/02-variables/)
+- [String](./docs/01-fundamentals/03-string/)
