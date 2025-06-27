@@ -10,3 +10,4 @@
 - [Operators](./docs/01-fundamentals/04-operators/)
 - [Control Flow](./docs/01-fundamentals/05-control-flow/)
 - [Wrapper Classes](./docs/01-fundamentals/06-wrapper-classes/)
+- [Value vs Reference](./docs/01-fundamentals/07-value-reference/)
