@@ -13,3 +13,4 @@
 - [Value vs Reference](./docs/01-fundamentals/07-value-reference/)
 - [Date](./docs/01-fundamentals/08-date/)
 - [System](./docs/01-fundamentals/09-system/)
+- [Math and Random](./docs/01-fundamentals/10-math-random/)
