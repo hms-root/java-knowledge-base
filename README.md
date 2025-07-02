@@ -15,3 +15,4 @@
 - [System](./docs/01-fundamentals/09-system/)
 - [Math and Random](./docs/01-fundamentals/10-math-random/)
 - [Command Line](./docs/01-fundamentals/11-command-line/)
+- [Arrays](./docs/01-fundamentals/12-arrays/)
