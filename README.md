@@ -17,3 +17,15 @@
 - [Command Line](./docs/01-fundamentals/11-command-line/)
 - [Arrays](./docs/01-fundamentals/12-arrays/)
 - [Matrices](./docs/01-fundamentals/13-matrices/)
+
+### Object-Oriented Programming
+
+##### Comming soon!
+
+### Advanced Java
+
+##### Comming soon!
+
+### Software Architecture & Core Algorithms
+
+##### Comming soon!
