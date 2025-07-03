@@ -28,4 +28,4 @@
 
 ### Software Architecture & Core Algorithms
 
-##### Comming soon!
+- [Big O Notation](./docs/04-software-architecture/01-big-o-notation/)
