@@ -30,3 +30,4 @@
 
 - [Big O Notation](./docs/04-software-architecture/01-big-o-notation/)
 - [Sorting Algorithms](./docs/04-software-architecture/02-sorting-algorithms/)
+- [Search Algorithms](./docs/04-software-architecture/03-search-algorithms/)
