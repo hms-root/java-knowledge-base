@@ -35,6 +35,8 @@
 - [Enums](./docs/02-oop/13-enums/)
 - [Method Overloading](./docs/02-oop/14-method-overloading/)
 - [Polymorphism](./docs/02-oop/15-polymorphism/)
+- [Abstraction](./docs/02-oop/16-abstraction/)
+- [Add Method and Method Chaining](./docs/02-oop/17-add-method-chaining/)
 
 ### Advanced Java
 
