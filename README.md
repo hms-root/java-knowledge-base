@@ -21,6 +21,7 @@
 ### Object-Oriented Programming
 
 - [Introduction](./docs/02-oop/01-introduction/)
+- [Programming Paradigms](./docs/02-oop/02-programming-paradigms/)
 
 ### Advanced Java
 
