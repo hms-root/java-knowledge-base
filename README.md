@@ -30,6 +30,7 @@
 - [POJO](./docs/02-oop/08-pojo/)
 - [Constructors](./docs/02-oop/09-constructors/)
 - [Equals](./docs/02-oop/10-equals/)
+- [toString](./docs/02-oop/11-toSring/)
 
 ### Advanced Java
 
