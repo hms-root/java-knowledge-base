@@ -22,6 +22,7 @@
 
 - [Introduction](./docs/02-oop/01-introduction/)
 - [Programming Paradigms](./docs/02-oop/02-programming-paradigms/)
+- [Classes and Objects](./docs/02-oop/03-classes-objects/)
 
 ### Advanced Java
 
