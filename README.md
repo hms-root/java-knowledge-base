@@ -27,7 +27,7 @@
 - [Access Modifiers](./docs/02-oop/05-access-modifiers/)
 - [Relationships Between Classes and Objects](./docs/02-oop/06-relationships-classes-objects/)
 - [Encapsulation](./docs/02-oop/07-encapsulation/)
-- [POJO](./docs/02-oop/07-encapsulation/)
+- [POJO](./docs/02-oop/08-pojo/)
 
 ### Advanced Java
 
