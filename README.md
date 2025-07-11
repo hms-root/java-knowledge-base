@@ -31,6 +31,7 @@
 - [Constructors](./docs/02-oop/09-constructors/)
 - [Equals](./docs/02-oop/10-equals/)
 - [toString](./docs/02-oop/11-toSring/)
+- [Static Members](./docs/02-oop/11-toSring/)
 
 ### Advanced Java
 
