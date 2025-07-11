@@ -24,6 +24,7 @@
 - [Programming Paradigms](./docs/02-oop/02-programming-paradigms/)
 - [Classes and Objects](./docs/02-oop/03-classes-objects/)
 - [This Keyword](./docs/02-oop/04-this/)
+- [Access Modifiers](./docs/02-oop/05-access-modifiers/)
 
 ### Advanced Java
 
