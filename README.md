@@ -25,6 +25,7 @@
 - [Classes and Objects](./docs/02-oop/03-classes-objects/)
 - [This Keyword](./docs/02-oop/04-this/)
 - [Access Modifiers](./docs/02-oop/05-access-modifiers/)
+- [Relationships Between Classes and Objects](./docs/02-oop/06-relationships-classes-objects/)
 
 ### Advanced Java
 
