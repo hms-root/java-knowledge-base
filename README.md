@@ -37,6 +37,7 @@
 - [Polymorphism](./docs/02-oop/15-polymorphism/)
 - [Abstraction](./docs/02-oop/16-abstraction/)
 - [Add Method and Method Chaining](./docs/02-oop/17-add-method-chaining/)
+- [compareTo](./docs/02-oop/18-compareTo/)
 
 ### Advanced Java
 
