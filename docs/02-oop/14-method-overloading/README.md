@@ -67,6 +67,126 @@ public class Formatter {
 
 ---
 
+## 📘 Varargs (Variable-Length Argument Lists)
+
+Java’s Varargs (introduced in Java 5) allows a method to accept zero or more arguments of a specified type, providing flexibility while maintaining type safety.
+
+**Syntax:**
+
+```java
+void methodName(Type... args) { }
+```
+
+Internally, the varargs parameter is treated as an array (`Type[]`), allowing array-like operations.
+
+### ✅ When to Use
+
+- When the number of input arguments is variable.
+- When API simplicity is preferred over explicit array construction.
+
+### ❗ Rules
+
+1. Only **one** varargs parameter per method.
+2. Must be the **last** parameter in the method signature.
+
+### ✅ Example: Logging Utility
+
+```java
+public class Logger {
+    public static void log(String... messages) {
+        for (String message : messages) {
+            System.out.println("[LOG] " + message);
+        }
+    }
+
+    public static void main(String[] args) {
+        log("Starting application");
+        log("Connecting to DB", "User: admin", "Timeout: 5000ms");
+    }
+}
+```
+
+**Output:**
+
+```
+[LOG] Starting application
+[LOG] Connecting to DB
+[LOG] User: admin
+[LOG] Timeout: 5000ms
+```
+
+### ⚠️ Pitfalls
+
+- **Ambiguity with overloading**:
+
+  ```java
+  public void print(String... args) { }
+  public void print(String arg) { } // COMPILATION ERROR with some calls like print("x")
+  ```
+
+- **Performance concern** in tight loops — avoid overusing varargs for hot paths, as they incur array allocation on each call.
+
+---
+
+## ⚙️ Static Method Overloading
+
+Static methods, like instance methods, can be **overloaded** by defining multiple methods with the same name but different **parameter lists**.
+
+This is **compile-time polymorphism** — method resolution is done at compile time based on the method signature.
+
+### ✅ Example: Math Utilities
+
+```java
+public class MathUtil {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static double add(double a, double b) {
+        return a + b;
+    }
+
+    public static int add(int... nums) {
+        int sum = 0;
+        for (int n : nums) {
+            sum += n;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(add(2, 3));          // 5
+        System.out.println(add(2.0, 3.5));      // 5.5
+        System.out.println(add(1, 2, 3, 4, 5)); // 15
+    }
+}
+```
+
+### 💡 Professional Insight
+
+- Prefer method overloading **only when** methods perform logically similar operations. Abusing overloading leads to **poor readability**.
+- Combine varargs with overloading for APIs that are both **flexible** and **precise**:
+  ```java
+  public static void print(int a) { }
+  public static void print(int a, int b) { }
+  public static void print(int... args) { }
+  ```
+
+### ⚠️ Pitfalls
+
+- Overloading with varargs can cause **confusing resolution**:
+
+  ```java
+  static void call(int... nums) { }
+  static void call(Integer i) { }
+
+  call(5); // Which method? Depends on autoboxing and is error-prone.
+  ```
+
+- **Avoid relying on overloading for API versioning.** Use explicit method names instead (e.g., `processV1`, `processWithMetadata`).
+
+---
+
 ## Best Practices
 
 - ✅ Ensure that overloaded methods perform **semantically similar** operations.
