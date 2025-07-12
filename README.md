@@ -38,6 +38,7 @@
 - [Abstraction](./docs/02-oop/16-abstraction/)
 - [Add Method and Method Chaining](./docs/02-oop/17-add-method-chaining/)
 - [compareTo](./docs/02-oop/18-compareTo/)
+- [Packages](./docs/02-oop/19-packages/)
 
 ### Advanced Java
 
